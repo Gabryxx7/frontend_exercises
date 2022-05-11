@@ -46,7 +46,7 @@ function linkClick(event) {
 }
 
 function loadLink(linkElement) {
-    load("#main-container", linkElement.getAttribute("href"), linkElement.getAttribute("page-id"), linkElement.getAttribute("page-title"), true);
+    load("#inner-container", linkElement.getAttribute("href"), linkElement.getAttribute("page-id"), linkElement.getAttribute("page-title"), true);
     return false;
 }
 
@@ -80,6 +80,13 @@ function initializer(pageId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    var alerts = document.getElementsByClassName("alert-close");
+    for(let i = 0; i < alerts.length; i++) {
+        alerts[i].addEventListener("click", function() {
+        this.classList.add("closed");
+    })
+    }
+
     loadLink(document.getElementById("home-link"));
     var links = document.getElementsByClassName("nav-link");
     for (const link of links) {
