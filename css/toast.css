@@ -1,0 +1,141 @@
+
+.alert-container{
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  flex-direction: row;
+  flex-basis: 100%;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  max-width: 100%;
+  border-radius: 0.375rem;
+  margin-left: 0;
+  width: 100%;
+  font-weight: 600;
+  box-shadow: rgb(26 115 232 / 15%) 0rem 0.1875rem 0.1875rem 0rem, rgb(26 115 232 / 20%) 0rem 0.1875rem 0.0625rem -0.125rem, rgb(26 115 232 / 15%) 0rem 0.0625rem 0.3125rem 0rem;
+}
+
+.alert-inner{
+  display: flex;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.alert-btns{
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.alert-btns > span {
+  margin-left: 0.2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 18pt;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.alert-btns > span:hover{
+  opacity: 0.5;
+}
+
+
+.alert-icon {
+  float: left;
+  margin-right: 15px;
+}
+
+#notifications-container{
+  display: block;
+  position: fixed;
+  width: 20rem;
+}
+
+#notifications-container.top{
+  top: var(--notif-box-padding);
+}
+
+#notifications-container.bottom{
+  bottom: var(--notif-box-padding);    
+}
+
+#notifications-container.left{
+  left: var(--notif-box-padding);
+}
+
+#notifications-container.right{
+  right: var(--notif-box-padding);   
+}
+
+.progress-bar {
+  bottom: 0;
+  left: 2px;
+  position: absolute;
+  width: 99%;
+  height: 3px;
+  border-radius: 4px;
+}
+.progress-bar .inner {
+  height: 100%;
+  width: 100%;
+  animation: progress-bar-countdown;
+  /* Placeholder, this will be updated using javascript */
+  animation-duration: 40s;
+  /* We stop in the end */
+  animation-iteration-count: 1;
+  /* Stay on pause when the animation is finished finished */
+  animation-fill-mode: forwards;
+  /* We start paused, we start the animation using javascript */
+  animation-play-state: paused;
+  /* We want a linear animation, ease-out is standard */
+  animation-timing-function: linear;
+}
+@keyframes progress-bar-countdown {
+  0% {
+    width: 100%;
+    background: #0F0;
+  }
+  100% {
+    width: 0%;
+    background: #F00;
+  }
+}
+
+.slide {
+  margin-left: 0;
+  animation: slide 0.9s forwards;
+  animation-delay: 0.1s;
+  /* animation-timing-function: cubic-bezier(0.46, 0.01, 0.61, 1); */
+  animation-timing-function: cubic-bezier(0, -0.61, 0.66, 1.34);
+  max-height: 100px;
+}
+
+
+@-webkit-keyframes slide {
+  50% {
+    margin-left: 1000px;
+    max-height: 100px;
+  }
+  100% {
+    margin-left: 1000px;
+    max-height: 0px;
+  }
+}
+
+@keyframes slide {
+  50% {
+    margin-left: 1000px;
+    max-height: 100px;
+  }
+  100% {
+    margin-left: 1000px;
+    max-height: 0px;
+  }
+}

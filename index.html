@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/typefaces.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/toast.css">
     <script src="js/gallery-grid.js"></script>
+    <script src="js/toast.js"></script>
     <script src="js/main.js"></script>
     <title>Document</title>
 </head>
@@ -25,18 +27,37 @@
         <a class="nav-link" href="/html/test.html" page-id="2" page-title="Test" onclick="linkClick()"> Test Page </a>
     </div>
     <div id="main-container" class="body-element">
-        <div class='alert-container primary spacer' role='alert'>
-            <i class="fas fa-exclamation-circle alert__icon"></i>
-            <div class="alert-inner">
-                <p class='alert-text'>This is a primary alert</p>
-                <button type="button" class="alert-close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times-circle alert-close"></i></span>
-                </button>
-            </div>
-        </div>
         <div id="inner-container">
         </div>
-
+    </div>
+    <div id="notifications-container" class="top right">
+        <div class="alert-container primary">
+            <div class="alert-inner progress">
+            This is an alert box.
+            <span class="alert-btns">
+                <span class="swipe-btn">&gt;</span>
+                <span class="close-btn">&times;</span>
+            </span>
+        </div>
+        </div>
+        <div class="alert-container secondary">
+            <div class="alert-inner progress">
+            This is an alert box.
+            <span class="alert-btns">
+                <span class="swipe-btn">&gt;</span>
+                <span class="close-btn">&times;</span>
+            </span>
+        </div>
+        </div>
+        <div class="alert-container error">
+            <div class="alert-inner progress">
+            This is an alert box.
+            <span class="alert-btns">
+                <span class="swipe-btn">&gt;</span>
+                <span class="close-btn">&times;</span>
+            </span>
+        </div>
+        </div>
 
     </div>
 </body>

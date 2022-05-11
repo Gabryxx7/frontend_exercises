@@ -1,7 +1,7 @@
 const getData = (pageUrl) => {
     return new Promise((resolve, reject) => {
         let request = new XMLHttpRequest();
-        request.onload = function() {
+        request.onload = function () {
             if (this.readyState === 4 && this.status === 200) {
                 resolve(this.responseText);
             } else {
@@ -25,7 +25,7 @@ function load(container_selector, pageUrl, page_id, page_title, push = true) {
 
             document.querySelector(container_selector).innerHTML = resp;
             document.querySelector(container_selector).style.opacity = 0;
-            setTimeout(function() {
+            setTimeout(function () {
                 document.querySelector(container_selector).style.opacity = 1;
             }, 200)
             console.log(pageUrl);
@@ -67,7 +67,7 @@ window.addEventListener('popstate', (event) => {
 function initializer(pageId) {
     switch (pageId) {
         case "1":
-            document.getElementById("generate-grid").onsubmit = function() {
+            document.getElementById("generate-grid").onsubmit = function () {
                 return (onSubmitForm());
             };
             initSliders();
@@ -79,18 +79,16 @@ function initializer(pageId) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var alerts = document.getElementsByClassName("alert-close");
-    for(let i = 0; i < alerts.length; i++) {
-        alerts[i].addEventListener("click", function() {
-        this.classList.add("closed");
-    })
-    }
+
+document.addEventListener("DOMContentLoaded", function () {
+    toastOnClicks();
+    // addProgressBars();
+    // Get all elements with class="closebtn"
 
     loadLink(document.getElementById("home-link"));
     var links = document.getElementsByClassName("nav-link");
     for (const link of links) {
-        link.addEventListener("click", function(event) {
+        link.addEventListener("click", function (event) {
             linkClick(event);
         });
     }
